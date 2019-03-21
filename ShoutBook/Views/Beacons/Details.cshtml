@@ -1,0 +1,63 @@
+﻿@model ShoutBook.Models.Beacon
+
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Beacon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Time)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Time)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.From)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.From)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.To)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.To)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Seen)
+        </dt>
+        <dd>
+            @if (Model.Seen == 1)
+            {
+                <h5>Seen</h5>
+            }
+            else
+            {
+                <h5>Unseen</h5>
+            }
+        </dd>
+    </dl>
+</div>
+<div>
+    @if (@Model.To.Equals(UserManager.GetUserName(User)))
+    {
+        <a class="btn btn-default" asp-action="Delete" asp-route-id="@Model.ID">Delete</a>
+    }
+    <a class="btn btn-default" asp-action="Index">Back to List</a>
+</div>

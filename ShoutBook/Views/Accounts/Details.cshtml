@@ -1,0 +1,78 @@
+﻿@model ShoutBook.Models.Shout
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Shout</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShoutBy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ShoutBy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShoutByID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ShoutByID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Vote)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vote)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Reject)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Reject)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Time)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Time)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Attach)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Attach)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
